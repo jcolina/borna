@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Buttons/Child view for showing hour strip used in day view and month view -->
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="175" 
+	height="69" 
+	backgroundColor="#F3FFFE" 
+	initialize="initCom()"
+	xmlns:mxmlViews="mxml_views.*" horizontalScrollPolicy="off" >
+	
+	<mx:Script>
+        <![CDATA[
+        	import mx.controls.Alert;
+            import flash.events.MouseEvent;
+            public  var IDvehi:String;
+			public  var IDeta:String;
+			public var modelo:String;
+			public var etapa:String;
+			public var patente:String;
+			public var marca:String;
+			public var fecha:String;
+			
+			public function initCom():void{
+				onMouseOut()
+			}
+			//public var modelo:String;
+            private const CELESTE_COLOR:int = 0xcfeff6;
+            private const CELESTE_DARK_COLOR:int = 0xa0e9f9;
+            
+            private const GRIS_COLOR:int = 15395562;
+            private const BLANCO_DARK_COLOR:int = 16777215;
+     	
+
+            private function onMouseOver():void {            	
+            	this.cnvPatente.setStyle("backgroundColor", CELESTE_DARK_COLOR);
+            	this.cnvFecha.setStyle("backgroundColor", CELESTE_COLOR);
+            	this.cnvMarca.setStyle("backgroundColor", CELESTE_DARK_COLOR);
+            }
+           
+            private function onMouseOut():void {
+            	this.cnvPatente.setStyle("backgroundColor", GRIS_COLOR);
+            	this.cnvFecha.setStyle("backgroundColor", BLANCO_DARK_COLOR);
+            	this.cnvMarca.setStyle("backgroundColor", GRIS_COLOR);
+            }
+        ]]>
+    </mx:Script>
+    
+	<mx:Zoom id="zoomAll" zoomWidthTo="250" zoomHeightTo="40" zoomWidthFrom="175" zoomHeightFrom="69"/>
+	
+	<mx:HRule x="0" width="100%" strokeColor="#D3DAFF" bottom="0" strokeWidth="1"/>	
+	
+	<mx:Canvas id="cnvPatente" x="0" y="0" width="175" height="23" horizontalScrollPolicy="off" styleName="contPatente" mouseOver="onMouseOver()" mouseOut="onMouseOut()">
+		<mx:Label id="lblPatente" width="175" height="23" fontWeight="bold" fontSize="11" mouseOver="onMouseOver()" mouseOut="onMouseOut()"/>
+	</mx:Canvas>
+	<mx:Canvas id="cnvFecha" x="0" y="22" width="175" height="23" horizontalScrollPolicy="off" styleName="contFecha" mouseOver="onMouseOver()" mouseOut="onMouseOut()">
+		<mx:Label id="lblFecha" width="175" height="23" mouseOver="onMouseOver()" mouseOut="onMouseOut()" fontSize="11"/>
+	</mx:Canvas>
+	<mx:Canvas id="cnvMarca" x="0" y="45" width="175" height="23" horizontalScrollPolicy="off" styleName="contMarca" mouseOver="onMouseOver()" mouseOut="onMouseOut()">
+		<mx:Label id="lblMarca" fontSize="11" width="175" height="23" mouseOver="onMouseOver()" mouseOut="onMouseOut()"/>
+	</mx:Canvas>
+
+</mx:Canvas>

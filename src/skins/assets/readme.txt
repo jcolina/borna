@@ -1,0 +1,1 @@
+All patterns are from http://squidfingers.com

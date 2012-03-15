@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+	width="100%" height="100%"
+	horizontalScrollPolicy="auto" verticalScrollPolicy="off"
+	creationComplete="initMod()"
+	xmlns:comViews="Componentes.Agenda.mxml_views.*" 	
+	xmlns:views="Componentes.Agenda.classes.views.*" >
+	<mx:Script source="libModAgenda.as"/>
+	
+	<mx:Style source="Componentes/Agenda/styles/skin.css"/> 
+	
+	<mx:Canvas width="100%" height="413" y="80"  >	
+			
+			<views:WeekView id="weekView" label="Month View " x="0" horizontalScrollPolicy="auto"  verticalScrollPolicy="auto" width="100%" height="100%" >
+			 
+			 </views:WeekView>
+		
+	</mx:Canvas>
+	<mx:Canvas width="100%" verticalScrollPolicy="off">	
+		 <mx:ApplicationControlBar x="0" y="0" width="100%" height="74" fillAlphas="[0.0, 0.0]">
+			<mx:LinkButton toolTip="Semana Anterior" click="lastWeek()"  width="65" height="48">
+				<mx:icon>@Embed(source='../../assets/back-32.png')</mx:icon>
+			</mx:LinkButton>
+			<mx:LinkButton click="nextWeek()" toolTip="Semana Siguiente" width="66" height="48">
+				<mx:icon>@Embed(source='../../assets/next-32.png')</mx:icon>
+			</mx:LinkButton>		
+			<mx:Canvas width="263" height="40">
+				<mx:Label text="Diciembre 2010" id="lblMes" fontSize="20" fontWeight="bold" x="21" y="0" visible="false"/>
+			</mx:Canvas>
+			<mx:LinkButton  id="lnkUpdate" click="Application.application.actualizaAgenda()" toolTip="Actualizar agenda" y="39" x="428">
+				<mx:icon>@Embed(source='../../assets/actualizar.png')</mx:icon>
+			</mx:LinkButton>
+			<mx:Spacer width="10"/>
+			<mx:LinkButton  id="lnkHoy" click="presentWeek()" toolTip="Semana Actual" label="Ir a Semana Actual" labelPlacement="right" height="32" width="284" fontSize="20">
+				<mx:icon>@Embed(source='../../assets/day-32.png')</mx:icon>
+			</mx:LinkButton>			
+		</mx:ApplicationControlBar>
+	</mx:Canvas>
+</mx:Module>

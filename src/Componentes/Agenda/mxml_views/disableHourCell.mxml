@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Buttons/Child view for showing hour strip used in day view and month view -->
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="175" 
+	height="69" 
+	backgroundColor="#D3DAFF" 
+	xmlns:mxmlViews="mxml_views.*">
+	
+	<!--
+	<mx:Button x="-2" y="0" width="148" height="50" styleName="btnDayItems" id="btnFirstHalf"/>
+	-->
+	<!--
+	<mx:HRule x="0" top="25" strokeWidth="1" width="100%" strokeColor="#ECECEC"/>
+	-->
+	<mx:HRule x="0" width="100%" strokeColor="#FFFFFF" bottom="0" strokeWidth="1"/>	
+	
+</mx:Canvas>
