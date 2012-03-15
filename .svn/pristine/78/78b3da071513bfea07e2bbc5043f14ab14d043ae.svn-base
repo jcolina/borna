@@ -1,0 +1,29 @@
+<data>
+<!--URL Servicios-->
+<urlServerDataService>http://192.168.1.161/dataServices/services/</urlServerDataService>
+<urlServerWsas>http://192.168.1.161/wsas/services/</urlServerWsas>
+
+<!--URL app-->
+
+<!--Users-->
+<UserName>DtsFxUser</UserName>
+<UserPass>2011.DtsFx.I2K</UserPass>
+
+<!--Transporte-->
+<transport>HTTP</transport>
+
+<!--EndPoint-->
+<dataServicesEndPoint>.SOAP11Endpoint</dataServicesEndPoint>
+<mashupEndPoint>.SOAP11Endpoint/</mashupEndPoint>
+<wsasEndPoint>HttpSoap11Endpoint/</wsasEndPoint>
+
+<!--Nombre Servicios-->
+<service name="Cache">ControlCache?wsdl</service>
+<service name="Borna">Borna?wsdl</service>
+<service name="BornaFinalizaEtapa">admin/BornaFinalizaEtapa?wsdl</service>
+
+<!-- Servicio LocalHost Apagar/limpiar-->
+<service name="Opciones">http://localhost/lalal?op=</service>
+
+
+</data>

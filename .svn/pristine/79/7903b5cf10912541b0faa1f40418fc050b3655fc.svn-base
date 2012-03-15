@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicBorderSkin
+    xmlns:mx="http://www.adobe.com/2006/mxml"  
+    xmlns="http://www.degrafa.com/2007"
+    >
+    
+    <mx:Script>
+        <![CDATA[
+        	import skins.palette.Palette;
+        	
+            [Bindable]
+            private var awidth:Number=0;
+            
+            [Bindable]
+            private var aheight:Number=0;
+            
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+            {
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+                aheight = unscaledHeight;
+            }
+            
+            override public function get measuredWidth():Number
+		    {
+		        return ScrollBarProps.WIDTH;
+		    }
+
+		    override public function get measuredHeight():Number
+		    {
+		        return ScrollBarProps.ARROW_CONTAINER_HEIGHT;
+		    }
+        ]]>
+    </mx:Script>
+    
+    <!-- All the Polygons, points, and GraphicPoints below are just drawing triangles -->
+    
+    <geometry>
+	    <GeometryComposition>
+	    	<RegularRectangle
+	        			fill="{Palette.fills.solidTeal}"
+	        			stroke="{Palette.strokes.solidDarkBrown}"
+	        			width="{awidth}"
+	        			height="{aheight}"
+	        		/>
+	    	
+	    </GeometryComposition>
+	    
+        <GeometryComposition
+        	state="upArrowUpSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidLightBrown}"
+        		stroke="{Palette.strokes.solidDarkBrown}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="0"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+
+        <GeometryComposition
+        	state="upArrowOverSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidOffWhite}"
+        		stroke="{Palette.strokes.solidDarkBrown}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="0"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+
+        <GeometryComposition
+        	state="upArrowDownSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidOffWhite}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="0"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+
+        <GeometryComposition
+        	state="upArrowDisabledSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidDarkBrown}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="0"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+        
+        <GeometryComposition
+        	state="downArrowUpSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidLightBrown}" 
+        		stroke="{Palette.strokes.solidDarkBrown}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+        
+        <GeometryComposition
+        	state="downArrowOverSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidOffWhite}" 
+        		stroke="{Palette.strokes.solidDarkBrown}"
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+        
+        <GeometryComposition
+        	state="downArrowDownSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidOffWhite}" 
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+        
+        <GeometryComposition
+        	state="downArrowDisabledSkin"
+        	>
+        	<Polygon 
+        		fill="{Palette.fills.solidDarkBrown}" 
+        		x="{ScrollBarProps.WIDTH / 2 - ScrollBarProps.ARROW_WIDTH / 2}"
+        		y="{ScrollBarProps.ARROW_CONTAINER_HEIGHT / 2 - ScrollBarProps.ARROW_HEIGHT / 2}"
+        		>
+        		<points>
+        			<GraphicPoint 
+        				x="0" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH}" 
+        				y="0"
+        				/>
+        			<GraphicPoint 
+        				x="{ScrollBarProps.ARROW_WIDTH / 2}" 
+        				y="{ScrollBarProps.ARROW_HEIGHT}"
+        				/>
+        		</points>
+        	</Polygon>
+        </GeometryComposition>
+        
+    </geometry>
+</GraphicBorderSkin>

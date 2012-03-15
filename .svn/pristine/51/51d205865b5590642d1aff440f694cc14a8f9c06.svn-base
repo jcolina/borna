@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="218" height="70"
+	verticalScrollPolicy="off" horizontalScrollPolicy="off"
+	initialize="initCom()">
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.core.Application;
+		]]>
+	</mx:Script>
+	
+	<mx:Script source="libComFinalizaEtapa.as" />
+	
+	<mx:Button x="10" y="10" label="Finalizar Etapa" cornerRadius="10" icon="@Embed(source='../assets/check-32.png')" width="197" height="49" fillAlphas="[0.6, 1.0, 0.6, 0.6]" fillColors="[#F14D4D, #F14D4D]" color="#FFFFFF" click="finalizarEtapa()"/>
+</mx:Canvas>

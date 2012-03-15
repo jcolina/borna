@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<collections:FillCollection
+    xmlns="http://www.degrafa.com/2007"
+    xmlns:mx="http://www.adobe.com/2006/mxml"  
+    xmlns:collections="com.degrafa.core.collections.*">
+    
+    <mx:Script>
+    	<![CDATA[
+    		import skins.assets.AssetLibrary;
+    	]]>
+    </mx:Script>
+
+    <BitmapFill id="bitmapPattern124" source="{AssetLibrary.PATTERN_124}"/>
+    <!--Color cuando se inicia las flechas despues cambia :S -->
+	    <SolidFill id="solidDarkBrown" color="#E0E0E0"/>
+	 <!--Color fondo del scroll (riel) -->   	 
+    <SolidFill id="solidLightBlue" color="#E0E0E0"/>
+    <!--Color Flechas y cuando se pulsa el scroll -->
+    <SolidFill id="solidLightBrown" color="#2E8DBC"/>
+     <!--Color encima de las flechas -->
+    <SolidFill id="solidOffWhite" color="#CDFCFF"/>
+     <!--Color del scroll y los botones -->
+    <SolidFill id="solidTeal" color="#D3DAFF"/>
+
+</collections:FillCollection>

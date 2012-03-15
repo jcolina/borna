@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+	height="342"
+	verticalScrollPolicy="off"
+	title="Información Vehículo" showCloseButton="true"
+	close="Application.application.closePopUp(this)" initialize="initCom()" width="422" xmlns:ns1="Componentes.*">
+ 	<mx:Script>
+ 		<![CDATA[
+ 			import mx.core.Application;
+ 			import Util.PopUpUtils;
+ 		]]>
+ 	</mx:Script>
+
+ 	<mx:Script source="libComNotificar.as"/>
+ 	
+ 	<mx:Canvas width="100%" height="197" horizontalCenter="0">
+ 		<mx:Label text="Patente:" y="10" x="30" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label id="lblPatente" y="10" x="221" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label text="Marca:" y="46" x="30" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label id="lblMarca" y="46" x="221" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label text="Fecha Entrega:" y="154" x="30" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label id="lblFecha" y="154" x="221" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label text="Etapa Actual:" y="118" x="30" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label id="lblEtapa" y="118" x="221" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label text="Modelo:" y="82" x="30" fontFamily="Arial" textAlign="left"/>
+	 	<mx:Label id="lblModelo" y="82" x="221" fontFamily="Arial" textAlign="left"/>
+ 	</mx:Canvas>
+ 	<mx:Button label="Finalizar Etapa" cornerRadius="10" icon="@Embed(source='../../assets/check-32.png')" width="239" height="69" fillAlphas="[1.0, 1.0, 0.6, 0.6]" fillColors="[#FF0000, #FFFFFF]" color="#FFFFFF" click="finalizarEtapa()" y="214" horizontalCenter="0"/>
+ 	
+	<!-- Validadores -->
+	
+</mx:TitleWindow>

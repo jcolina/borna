@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicBorderSkin
+    xmlns:mx="http://www.adobe.com/2006/mxml"  
+    xmlns="http://www.degrafa.com/2007"
+    >
+    
+    <mx:Script>
+        <![CDATA[
+        	import skins.palette.Palette;
+            [Bindable]
+            private var awidth:Number=0;
+            
+            [Bindable]
+            //0
+            private var aheight:Number=0;
+            
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+            {
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+                aheight = unscaledHeight;
+            }
+            
+			override public function get measuredWidth():Number
+		    {
+		        return ScrollBarProps.WIDTH;
+		    }
+        ]]>
+    </mx:Script>
+    
+    <geometry>
+        <GeometryComposition>
+            <RegularRectangle
+            	id="trackBackground"
+                fill="{Palette.fills.bitmapPattern124}"
+                stroke="{Palette.strokes.solidTeal}"
+                width="{awidth}"
+                height="{aheight}"
+                />
+            <RoundedRectangle
+                id="trackGeometry"
+                cornerRadius="3"
+                fill="{Palette.fills.solidLightBlue}"
+                stroke="{Palette.strokes.solidDarkBrown}"
+                width="{ScrollBarProps.TRACK_WIDTH}"
+                height="{trackBackground.height * ScrollBarProps.TRACK_HEIGHT_PERCENTAGE}"
+                x="{awidth / 2 - ScrollBarProps.TRACK_WIDTH / 2}"
+				y="{(trackBackground.height - trackGeometry.height) / 2}"
+                />
+        </GeometryComposition>
+    </geometry>
+</GraphicBorderSkin>

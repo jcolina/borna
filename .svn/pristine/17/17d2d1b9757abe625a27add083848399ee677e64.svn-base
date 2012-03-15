@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:Rut="Validaciones.*"
+	layout="absolute"
+	width="100%" height="100%"
+	creationComplete="initApp()" >
+	<mx:Script>
+		<![CDATA[
+			import Componentes.Agenda.modAgenda;
+		]]>
+	</mx:Script>
+
+	<mx:Script source="libBorna.as" />
+	<mx:Style source="Css/style.css"/>
+	
+	<!-- Validadores -->
+	<Rut:ValidarRut id="vlRut" required="true" invalidIDCLError="Rut Inválido" source="{txtRut}" 
+		property="text" requiredFieldError="Debe Ingresar el Rut" invalidCharError="Caracteres Inválidos"/>
+	<mx:DateFormatter id="formatDate" formatString="EEE DD-MM-YY" />
+	
+		
+		<mx:ViewStack id="viewMain" width="100%" height="100%" creationPolicy="all">
+			
+			<mx:Canvas width="100%" height="100%">
+				<mx:Canvas verticalCenter="0" horizontalCenter="0" borderStyle="solid" cornerRadius="20" dropShadowColor="#000000" dropShadowEnabled="true" borderThickness="1" width="502">
+					<mx:VBox top="40" left="40" right="40" bottom="40">
+						<mx:Canvas width="100%">
+							<mx:Label text="Rut del taller" horizontalCenter="0"/>
+						</mx:Canvas>
+						<mx:Canvas width="100%">
+							<mx:TextInput id="txtRut" name="Rut de Taller" width="300" click="showPopUp(event)" horizontalCenter="0" verticalCenter="0"/>
+						</mx:Canvas>
+						<mx:Spacer height="15" />
+						<mx:Canvas width="100%" >					
+							<mx:Button horizontalCenter="0" width="196" height="60" cornerRadius="10" label="Ingresar" icon="@Embed(source='assets/ok-48.png')" click="validarTaller()"/>
+						</mx:Canvas>
+						<mx:Spacer height="15" />
+						<mx:Canvas width="100%" >					
+							<mx:CheckBox id="GuardaUser" label="Recordarme en este Equipo" horizontalCenter="0" fontSize="11" scaleX="1.5" scaleY="1.5"/>
+						</mx:Canvas>
+					</mx:VBox>			
+				</mx:Canvas>			
+			</mx:Canvas>
+				<mx:TabNavigator>
+					
+				
+			<mx:Canvas width="100%" height="100%" id="canvasPrincipal" label="Vehículos" verticalScrollPolicy="off">
+				<mx:VBox width="100%" height="100%">					
+					<mx:ApplicationControlBar width="100%" >
+						<mx:Canvas width="100%" verticalScrollPolicy="off" minWidth="1150">
+							<mx:HBox width="100%">
+								<mx:Canvas height="100%">
+									<mx:Label text="Números de patente del vehículo:" horizontalCenter="0" verticalCenter="0"/>
+								</mx:Canvas>
+								<mx:Spacer width="10"/>
+								<mx:Canvas height="100%">
+									<mx:TextInput id="txtPatente" name="Patente" width="300" horizontalCenter="0" verticalCenter="0" click="showPopUp(event)"/>
+								</mx:Canvas>
+								<mx:Spacer width="10"/>
+								<mx:Canvas height="100%" >
+									<mx:Button width="196"    height="60" cornerRadius="10" label="Buscar" icon="@Embed(source='assets/search-48.png')" horizontalCenter="0" verticalCenter="0" click="grillaPrincipal()" />
+								</mx:Canvas>
+								<mx:Canvas height="100%" width="100%">
+									<mx:Button width="210" height="60" right="0" cornerRadius="10" label="Apagar equipo" icon="@Embed(source='assets/shutdown-48.png')" click="showWait()" id="BotonApagar" visible="true"/>
+								</mx:Canvas>						
+							</mx:HBox>
+						</mx:Canvas>						
+					</mx:ApplicationControlBar>
+					<mx:Canvas width="100%" height="100%" styleName="Central">
+						<mx:Canvas width="100%" height="100%" backgroundColor="#FFFFFF" styleName="Center">
+							<mx:VBox width="100%" height="100%">
+								<mx:AdvancedDataGrid id="adgPrincipal" designViewDataType="tree" 
+									height="100%" width="100%"
+									fontSize="16" rowHeight="80" 
+									textAlign="center" headerHeight="28"
+									verticalScrollPolicy="off">
+									<mx:columns>
+										<mx:AdvancedDataGridColumn dataField="IDVehiculo" visible="false"/>
+										<mx:AdvancedDataGridColumn headerText="Patente" width="100" dataField="Patente"/>
+										<mx:AdvancedDataGridColumn headerText="Marca" dataField="Marca"/>
+										<mx:AdvancedDataGridColumn headerText="Modelo" width="150" dataField="Modelo"/>
+										<mx:AdvancedDataGridColumn headerText="Siniestro" dataField="Siniestro" width="250"/>
+										<mx:AdvancedDataGridColumn headerText="Cono" width="80" dataField="Cono" />
+										<mx:AdvancedDataGridColumn headerText="Etapa" width="150" dataField="EtapaActual"/>
+										<mx:AdvancedDataGridColumn headerText="Fecha de Entrega" width="200" dataField="Entrega"/>
+										<mx:AdvancedDataGridColumn headerText="" width="215" itemRenderer="Componentes.comFinalizarEtapa"/>
+										<mx:AdvancedDataGridColumn dataField="IDEtapa" visible="false"/>
+									</mx:columns>
+								</mx:AdvancedDataGrid>
+								<mx:Canvas id="containerFilter" width="100%" height="60" visible="false">
+									<mx:HBox verticalCenter="0" horizontalCenter="0">
+										<mx:Button id="btnLast" horizontalCenter="0" visible="false" width="100" height="50" cornerRadius="10" icon="@Embed(source='assets/last-48.png')" click="lastViewGrid()"/>
+										<mx:Spacer width="10"/>
+										<mx:Canvas width="100%" height="100%">
+											<mx:Label id="lblStatus" text="2/5" verticalCenter="0" horizontalCenter="0"/>
+										</mx:Canvas>									
+										<mx:Spacer width="10"/>
+										<mx:Button id="btnNext" horizontalCenter="0" visible="false" width="100" height="50" cornerRadius="10" icon="@Embed(source='assets/next-48.png')" click="nextViewGrid()"/>
+									</mx:HBox>
+								</mx:Canvas>
+							</mx:VBox>
+						</mx:Canvas>					
+					</mx:Canvas>
+				</mx:VBox>
+			</mx:Canvas>
+			<mx:Canvas id="cvAgenda" label="Agenda" width="100%" height="100%" >
+					<mx:Canvas id="contenedorAgenda" width="100%" height="100%" visible="true">
+						<mx:ModuleLoader id="mlModAgenda"  horizontalCenter="0" verticalCenter="0"  width="100%" height="100%"/>
+					</mx:Canvas> 
+				
+			</mx:Canvas>
+			</mx:TabNavigator>
+		
+		
+		</mx:ViewStack>
+	
+	
+</mx:Application>

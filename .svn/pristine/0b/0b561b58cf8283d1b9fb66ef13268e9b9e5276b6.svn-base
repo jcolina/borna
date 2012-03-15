@@ -1,0 +1,136 @@
+/* CSS file */
+Application
+{
+	backgroundGradientAlphas: 1.0, 1.0; 
+	backgroundGradientColors: #dedddd, #FFFFFF;
+	/*backgroundColor: #efeeee;*/
+}
+
+Notification
+{
+	titleStyleName: myTitleStyle;
+	messageStyleName: myMessageStyle;
+	backgroundStyleName: notificationBackground;
+	closeButtonIcon: Embed('Notificacion/assets/overClose.png');
+	paddingTop: 5;
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	horizontalGap: 10;
+	verticalGap: 10;
+	/*creationCompleteEffect: myWipeD;
+	removedEffect: myWipeU;*/
+}
+
+.notificationBackground
+{
+	colorsConfiguration: 2,2;
+	positioning: percentage;
+	gradientType: linear,radial;
+	fillColors: #b7babc, #b7babc;
+	fillAlphas:  1,1,1,0;
+	gradientRatio: 0,255,0,119;
+	angle: 90,0;
+	offsetX: 0,50;
+	offsetY: 0,-45;
+	spreadMethod: pad,pad;
+	interpolationMethod: rgb,linearRGB;
+	focalPointRatio: 0,0;
+	cornerRadius: 9;
+	borderThickness: 1;
+	borderColors: #2C2C7B, #FFFFFF;
+	borderAlphas: 1,1;
+	bordergradientRatio: 0,255;
+	borderAngle: -90;
+}
+
+.myTitleStyle
+{
+	fontSize: 12;
+	fontWeight: bold;
+	color: #ffffff;
+}
+
+.myMessageStyle
+{
+	fontSize: 12;
+	fontStyle: bold;
+	backgroundAlpha: 1;
+	color: #ffffff;
+}
+
+Button.Number
+{
+	fillAlphas: 0.8, 0.6, 0.68, 0.68;
+	fillColors: #FFFFFF, #DED9D9;
+	fontSize: 20;
+	fontWeight: bold;
+}
+
+Button.Close
+{
+	fillAlphas: 1.0, 1.0;
+	fillColors: #FC0000, #F68A8A;
+	fontWeight: bold;
+}
+TextInput
+{
+	borderStyle: solid;
+	cornerRadius: 10;
+	dropShadowColor: #000000;
+	dropShadowEnabled: true;
+	fontSize: 30;
+	fontWeight: bold;
+}
+
+Label
+{
+	fontSize: 18;
+	fontWeight: bold;
+}
+
+Button
+{
+	fontSize: 16;
+	fontWeight: bold;
+}
+
+ViewStack
+{
+	top: 10;
+	bottom: 10;
+	left: 10;
+	right: 10;
+}
+
+.Center
+{
+	top: 10;
+	bottom: 10;
+	left: 10;
+	right: 10;
+}
+
+Canvas.Central
+{
+	borderStyle: solid;
+	cornerRadius: 5;
+	dropShadowColor: #000000;
+	dropShadowEnabled: true;
+}
+Alert{
+	font-size: 18;
+	
+}
+
+
+VScrollBar
+{
+	
+    down-arrow-skin: ClassReference('skins.verticalscrollbar.ScrollArrowSkin');
+    track-skin: ClassReference('skins.verticalscrollbar.ScrollTrackSkin');
+    thumb-skin: ClassReference('skins.verticalscrollbar.ScrollThumbSkin');
+    up-arrow-skin: ClassReference('skins.verticalscrollbar.ScrollArrowSkin');
+}
+
+

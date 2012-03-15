@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Borna2</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.flexnature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>bin-release1</name>
+			<type>2</type>
+			<location>C:/Users/Info2000/Desktop/Pasar a Produccion/borna</location>
+		</link>
+		<link>
+			<name>bin-release2</name>
+			<type>2</type>
+			<location>C:/Users/Info2000/Desktop/Pasar a prod Borna/borna</location>
+		</link>
+		<link>
+			<name>bin-release</name>
+			<type>2</type>
+			<location>C:/Users/Info2000/Desktop/Borna Desarrollo Con Agenda</location>
+		</link>
+	</linkedResources>
+</projectDescription>

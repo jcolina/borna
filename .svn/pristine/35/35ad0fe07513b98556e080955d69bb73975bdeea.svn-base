@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicBorderSkin
+    xmlns:mx="http://www.adobe.com/2006/mxml"  
+    xmlns="http://www.degrafa.com/2007"
+    >
+    
+    <mx:Script>
+        <![CDATA[
+        	import skins.palette.Palette;
+            
+            [Bindable]
+            private var awidth:Number=0;
+            
+            [Bindable]
+            private var aheight:Number=0;
+
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void{
+                
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+            	aheight = unscaledHeight;
+            }
+            
+        	override public function get measuredWidth():Number
+			{
+				return ScrollBarProps.WIDTH;
+			}
+
+			override public function get measuredHeight():Number
+			{
+				return ScrollBarProps.ARROW_CONTAINER_HEIGHT;
+			}
+        ]]>
+    </mx:Script>
+    
+    <geometry>
+        <GeometryComposition
+            state="thumbUpSkin">
+            <RoundedRectangle
+                id="thumbGeometry_upSkin"
+                cornerRadius="2"
+                fill="{Palette.fills.solidTeal}"
+                stroke="{Palette.strokes.solidDarkBrown}"
+                height="{aheight}"
+                width="{awidth}"
+                />
+        </GeometryComposition>
+        
+        <GeometryComposition
+            state="thumbOverSkin">
+           <RoundedRectangle
+                id="thumbGeometry_overSkin"
+                cornerRadius="2"
+                fill="{Palette.fills.solidLightBlue}"
+                stroke="{Palette.strokes.solidDarkBrown}"
+                height="{aheight}"
+                width="{awidth}"
+                />
+        </GeometryComposition>
+        
+        <GeometryComposition
+            state="thumbDownSkin">
+            <RoundedRectangle
+                id="thumbGeometry_downSkin"
+                cornerRadius="2"
+                fill="{Palette.fills.solidLightBrown}"
+                stroke="{Palette.strokes.solidDarkBrown}"
+                height="{aheight}"
+                width="{awidth}"
+                />
+        </GeometryComposition>
+        
+        <GeometryComposition
+            state="thumbDisabledSkin"
+            >
+            <RoundedRectangle
+                id="thumbGeometry_disabledSkin"
+                cornerRadius="2"
+                fill="{Palette.fills.solidDarkBrown}"
+                height="{aheight}"
+                width="{awidth}"
+                />
+        </GeometryComposition>
+        
+    </geometry>
+</GraphicBorderSkin>

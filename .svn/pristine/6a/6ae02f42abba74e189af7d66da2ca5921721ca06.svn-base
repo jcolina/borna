@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<collections:StrokeCollection
+    xmlns="http://www.degrafa.com/2007"
+    xmlns:mx="http://www.adobe.com/2006/mxml"  
+    xmlns:collections="com.degrafa.core.collections.*"
+    >
+    
+    <SolidStroke id="solidDarkBrown" color="#2E8DBC"/>
+    <SolidStroke id="solidTeal" color="#D3DAFF"/>
+
+</collections:StrokeCollection>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- WEEK CELL IS USED TO DISPLAY BLUE BOXES IN WEEK VIEW,
+THESE BLUE BOXES CONTAINS HOUR STRIP JUST LIKE DAY VIEW SHOWS -->
+<mx:Canvas 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="175"
+	horizontalScrollPolicy="off" verticalScrollPolicy="off" 
+	backgroundColor="#FFFFFF">
+	<mx:ApplicationControlBar id="canHeader" y="-1" height="22" width="174" styleName="appBarDayCell">
+		<mx:Label id="lblDate" width="162" text="asd" styleName="lblViewTitle" textAlign="center" />
+	</mx:ApplicationControlBar>
+	
+	<mx:Canvas id="canDayView" width="175" verticalScrollPolicy="off" horizontalScrollPolicy="off" y="22"  x="1"/>
+</mx:Canvas>

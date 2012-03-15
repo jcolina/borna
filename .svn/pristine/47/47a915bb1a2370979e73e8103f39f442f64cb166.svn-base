@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+	showEffect="{wipeDown}" hideEffect="{wipeUp}"
+	creationComplete="initCom()" 
+	borderStyle="solid" cornerRadius="10" 
+	dropShadowColor="#000000" dropShadowEnabled="true"
+	visible="true" backgroundAlpha="1.0" backgroundColor="#FFFFFF" layout="absolute" showCloseButton="false" width="100%" height="100%">
+	
+
+	
+	<mx:Script source="libComTecladoAlfaNumerico.as" />
+	
+	<!-- Efectos -->
+	<mx:WipeDown duration="500" id="wipeDown"/>
+	<mx:WipeUp duration="500" id="wipeUp" effectEnd="closePopUp(event)"/>
+	<mx:Canvas width="900" height="460" horizontalCenter="0" top="0" id="canvasPrincipalAlfa">
+	<mx:Canvas backgroundAlpha="1.0" top="105" bottom="5" right="5" left="5">
+	<mx:Grid x="10" y="10" width="872" height="286" id="gridPrincipal">
+		<mx:GridRow width="100%" height="100%">
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="1" width="80" height="65" styleName="Number" click="onClickButton(event)" />
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="2" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="3" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="4" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="5" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="6" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="7" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="8" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="9" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="0" width="80" height="65" click="onClickButton(event)" styleName="Number"/>
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow width="100%" height="100%">
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="Q" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="W" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="E" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="R" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="T" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="Y" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="U" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="I" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="O" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="P" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow width="100%" height="100%">
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="A" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="S" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="D" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="F" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="G" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="H" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="J" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="K" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="L" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="Ñ" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+		</mx:GridRow>
+	
+		<mx:GridRow width="100%" height="100%">
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="Z" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="X" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="C" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="V" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="B" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="N" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="M" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="_" width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="." width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+			<mx:GridItem width="100%" height="100%">
+				<mx:Button label="," width="80" height="65" styleName="Number" click="onClickButton(event)"/>
+			</mx:GridItem>
+		</mx:GridRow>
+		
+	</mx:Grid>
+	<mx:Button width="374" height="42" styleName="Number" click="onClickButton(event)" x="243" y="304" label="ESPACIO"/>
+</mx:Canvas>
+	<mx:TextInput id="txtDatosConfirmacion" name="Patente" width="317" top="35" left="199"/>
+	<mx:Label x="10" y="48" text="Ingrese Código"/>
+	<mx:Button x="790" label="Cerrar" labelPlacement="bottom" width="100" height="80" styleName="Close" icon="@Embed(source='../assets/close-48.png')" click="{this.visible = false}" top="10"/>
+	<mx:Button x="550" label="Aceptar" labelPlacement="bottom" width="100" height="80" styleName="Close" icon="@Embed(source='../assets/ok-48.png')" click="finEtapaCodigo()" fillAlphas="[1.0, 1.0]" fillColors="[#0BFF16, #319F39]" top="10"/>
+	<mx:Button x="670" label="Borrar" labelPlacement="bottom" width="100" height="80" fontWeight="bold" click="onClickButtonBorrar(event)" icon="@Embed(source='../assets/clear-48.png')" top="10"/>
+	
+	</mx:Canvas>
+</mx:TitleWindow>
